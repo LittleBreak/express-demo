@@ -27,3 +27,11 @@ shell.exec(`sudo ${user} git push origin master`, (code, stdout, stderr) => {
   logger.error("gitPushError:", stderr);
   if (stderr) throw new Error("推送出错了");
 });
+const sdf = exec("mkdir /root/work/test", (error, stdout, stderr) => {
+  if (error) {
+    console.error(`exec error: ${error}`);
+    return;
+  }
+  console.log(`stdout: ${stdout}`);
+  console.error(`stderr: ${stderr}`);
+});
